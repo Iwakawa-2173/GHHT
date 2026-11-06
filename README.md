@@ -13,7 +13,8 @@
 
 ---
 
-#english
+# English
+
 # INTERNATIONAL STANDARD GHHT-1
 
 **Global Half-Hour Time System**
@@ -121,7 +122,7 @@ If communication is lost, the device must automatically switch to autonomous mod
 ---
 
 
-#русский
+# Русский
 # МЕЖДУНАРОДНЫЙ СТАНДАРТ GHHT-1
 
 **Глобальная система единого получасового времени**
@@ -228,7 +229,8 @@ $$
 
 ---
 
-#简体中文
+# 简体中文
+
 # 国际标准 GHHT-1
 
 **全球半小时时间系统**
@@ -335,7 +337,8 @@ $$
 
 ---
 
-#日本語
+# 日本語
+
 # 国際標準 GHHT-1
 
 **全球半時間システム**
@@ -442,7 +445,8 @@ $$
 
 ---
 
-#한국어
+# 한국어
+
 # 국제 표준 GHHT-1
 
 **글로벌 반시간 시스템**
