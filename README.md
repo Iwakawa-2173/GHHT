@@ -33,6 +33,7 @@
 $$
 I_z = round(λ / 7.5)
 $$
+
 ### 2.3. Шкала локального времени зон (Смещение)
 
 Внутреннее время внутри каждой зоны сдвинуто относительно центральной зоны ($I_z = 0$) на фиксированную величину, кратную **0.5 часа (30 минутам)**. Смещение зоны ($O_z$) рассчитывается как:
@@ -40,6 +41,7 @@ $$
 $$
 O_z = I_z × 0.5
 $$
+
 Обозначение локального времени формируется как $GHHT[±][Смещение в часах]$.
 *Пример: Для зоны с индексом +5 обозначение имеет вид* $GHHT+2.5$.
 
@@ -50,6 +52,7 @@ $$
 $$
 EQ T_zenith = (12.0 − λ/15.0 + O_z) (mod 24.0)
 $$
+
 *Примечание стандарта:* благодаря полуградусному шагу сетки, в любой точке Земли истинный астрономический полдень по локальным часам GHHT гарантированно наступает в диапазоне **от 11:45 до 12:15** (максимальное отклонение не превышает ±15 минут).
 
 ---
@@ -71,11 +74,13 @@ $$
 $$
 T_GHHT = T_UTC + Δt
 $$
+
 Где величина временного сдвига $Δt$ (выраженная в часах) вычисляется как функция от долготы $λ$:
 
 $$
 Δt = round(λ / 7.5) × 0.5
 $$
+
 Округление функции $round(x)$ выполняется к ближайшему целому числу по правилам математического округления (в случае полуцелых значений — к ближайшему четному или в сторону удаления от нуля, в зависимости от используемой геодезической системы координат).
 
 ### 3.3. Требования к синхронизации (Метрологическое обеспечение)
@@ -89,13 +94,15 @@ $$
 $$
 Δ_NTP = T_NTP_Server − T_System
 $$
+
 В случае доступности NTP-сервера, для расчёта времени GHHT обязана применяться скорректированная шкала:
 
 $$
 T_UTC = T_System + Δ_NTP
 $$
+
 При потере связи устройство обязано автоматически переходить в автономный режим с фиксацией статуса.
-$$
+
 ---
 
 $markdown
@@ -133,6 +140,7 @@ For any arbitrary point on the planet with longitude $λ$ (where $−180.0° ≤
 $$
 I_z = round(λ / 7.5)
 $$
+
 ### 2.3. Zone local time scale (Offset)
 
 The internal time within each zone is shifted relative to the central zone ($I_z = 0$) by a fixed amount that is a multiple of **0.5 hours (30 minutes)**. The zone offset ($O_z$) is calculated as:
@@ -140,6 +148,7 @@ The internal time within each zone is shifted relative to the central zone ($I_z
 $$
 O_z = I_z × 0.5
 $$
+
 The local time designation is formed as $GHHT[±][Offset in hours]$.
 *Example: For a zone with index +5, the designation is* $GHHT+2.5$.
 
@@ -150,6 +159,7 @@ Within any GHHT zone, the calculated local noon (the highest position of the Sun
 $$
 EQ T_zenith = (12.0 − λ/15.0 + O_z) (mod 24.0)
 $$
+
 *Standard note:* thanks to the half-degree grid step, at any point on Earth the true astronomical noon by local GHHT clocks is guaranteed to occur in the range **from 11:45 to 12:15** (maximum deviation does not exceed ±15 minutes).
 
 ---
@@ -171,11 +181,13 @@ To calculate the current local GHHT time ($T_GHHT$) at a geographic point with l
 $$
 T_GHHT = T_UTC + Δt
 $$
+
 Where the time shift value $Δt$ (expressed in hours) is calculated as a function of longitude $λ$:
 
 $$
 Δt = round(λ / 7.5) × 0.5
 $$
+
 The rounding function $round(x)$ is performed to the nearest integer according to the rules of mathematical rounding (in the case of half-integer values — to the nearest even number or away from zero, depending on the geodesic coordinate system used).
 
 ### 3.3. Synchronization requirements (Metrological assurance)
@@ -189,13 +201,15 @@ To guarantee system accuracy, software and hardware complexes implementing the G
 $$
 Δ_NTP = T_NTP_Server − T_System
 $$
+
 If an NTP server is available, the corrected scale must be used for GHHT calculation:
 
 $$
 T_UTC = T_System + Δ_NTP
 $$
+
 If communication is lost, the device must automatically switch to autonomous mode with status fixation.
-$$
+
 ---
 
 $markdown
@@ -233,6 +247,7 @@ $I_z = 0$ 区的地理边界位于子午线 **−3.75°** 和 **+3.75°** 之间
 $$
 I_z = round(λ / 7.5)
 $$
+
 ### 2.3. 区域本地时间标度（偏移）
 
 每个区域内的内部时间相对于中央区（$I_z = 0$）偏移一个固定的量，该量为**0.5小时（30分钟）** 的倍数。区域偏移（$O_z$）计算如下：
@@ -240,6 +255,7 @@ $$
 $$
 O_z = I_z × 0.5
 $$
+
 本地时间标识形如 $GHHT[±][以小时为单位的偏移]$。
 *示例：对于索引为 +5 的区域，标识为* $GHHT+2.5$。
 
@@ -250,6 +266,7 @@ $$
 $$
 EQ T_zenith = (12.0 − λ/15.0 + O_z) (mod 24.0)
 $$
+
 *标准说明：* 由于半度网格步长，在地球上任何地点，按本地 GHHT 时钟的真实天文正午保证出现在**11:45 至 12:15** 之间（最大偏差不超过 ±15 分钟）。
 
 ---
@@ -271,11 +288,13 @@ GHHT 系统中秒、分和小时的增量与 UTC 标度的度量完全一致。
 $$
 T_GHHT = T_UTC + Δt
 $$
+
 其中时间偏移值 $Δt$（以小时表示）作为经度 $λ$ 的函数计算：
 
 $$
 Δt = round(λ / 7.5) × 0.5
 $$
+
 舍入函数 $round(x)$ 按数学舍入规则舍入到最接近的整数（对于半整数值——舍入到最接近的偶数或远离零，取决于所使用的测地坐标系）。
 
 ### 3.3. 同步要求（计量保障）
@@ -289,13 +308,15 @@ $$
 $$
 Δ_NTP = T_NTP_Server − T_System
 $$
+
 如果 NTP 服务器可用，则必须使用校正后的标度进行 GHHT 计算：
 
 $$
 T_UTC = T_System + Δ_NTP
 $$
+
 如果通信丢失，设备必须自动切换到自主模式并固定状态。
-$$
+
 ---
 
 $markdown
@@ -333,6 +354,7 @@ $I_z = 0$ の帯の地理的境界は子午線**−3.75°**と**+3.75°** の間
 $$
 I_z = round(λ / 7.5)
 $$
+
 ### 2.3. 帯の現地時間スケール（オフセット）
 
 各帯内の内部時間は、中央帯（$I_z = 0$）に対して**0.5時間（30分）** の倍数である固定量だけシフトされる。帯オフセット（$O_z$）は次のように計算される：
@@ -340,6 +362,7 @@ $$
 $$
 O_z = I_z × 0.5
 $$
+
 現地時間の表記は $GHHT[±][時間単位のオフセット]$ の形式で形成される。
 *例：インデックス +5 の帯の場合、表記は* $GHHT+2.5$ *となる。*
 
@@ -350,6 +373,7 @@ $$
 $$
 EQ T_zenith = (12.0 − λ/15.0 + O_z) (mod 24.0)
 $$
+
 *標準注記：* 半度グリッドステップのおかげで、地球上の任意の地点において、現地 GHHT 時計による真の天文正午は**11:45 から 12:15** の範囲で必ず発生する（最大偏差は ±15 分を超えない）。
 
 ---
@@ -371,11 +395,13 @@ GHHT システムにおける秒、分、時間の増分は UTC スケールの�
 $$
 T_GHHT = T_UTC + Δt
 $$
+
 ここで、時間シフト値 $Δt$（時間単位）は経度 $λ$ の関数として計算される：
 
 $$
 Δt = round(λ / 7.5) × 0.5
 $$
+
 丸め関数 $round(x)$ は数学的丸めの規則に従って最近接整数に実行される（半整数値の場合——使用される測地座標系に応じて、最近接偶数またはゼロから遠ざかる方向へ）。
 
 ### 3.3. 同期要件（計量保証）
@@ -389,13 +415,15 @@ $$
 $$
 Δ_NTP = T_NTP_Server − T_System
 $$
+
 NTP サーバーが利用可能な場合、GHHT 計算には補正されたスケールを使用しなければならない：
 
 $$
 T_UTC = T_System + Δ_NTP
 $$
+
 通信が失われた場合、デバイスは自動的に自律モードに切り替え、ステータスを固定しなければならない。
-$$
+
 ---
 
 $markdown
@@ -433,6 +461,7 @@ $I_z = 0$ 구역의 지리적 경계는 자오선 **−3.75°** 와 **+3.75°** 
 $$
 I_z = round(λ / 7.5)
 $$
+
 ### 2.3. 구역 현지 시간 척도(오프셋)
 
 각 구역 내부의 시간은 중앙 구역($ I_z = 0 $)에 대해 **0.5시간(30분)** 의 배수인 고정량만큼 이동된다. 구역 오프셋($O_z$)은 다음과 같이 계산된다:
@@ -440,6 +469,7 @@ $$
 $$
 O_z = I_z × 0.5
 $$
+
 현지 시간 표기는 $GHHT[±][시간 단위 오프셋]$ 형식으로 구성된다.
 *예: 인덱스 +5인 구역의 경우 표기는* $GHHT+2.5$ *이다.*
 
@@ -450,6 +480,7 @@ $$
 $$
 EQ T_zenith = ($ 12.0 − λ/15.0 + O_z $) (mod 24.0)
 $$
+
 *표준 주석:* 반도 그리드 단계 덕분에, 지구상의 임의의 지점에서 현지 GHHT 시계에 의한 진정한 천문 정오는 **11:45에서 12:15** 범위에서 반드시 발생한다(최대 편차는 ±15분을 초과하지 않는다).
 
 ---
@@ -471,11 +502,13 @@ GHHT 시스템에서 초, 분, 시간의 증분은 UTC 척도의 계량과 완�
 $$
 T_GHHT = T_UTC + Δt
 $$
+
 여기서 시간 이동 값 $Δt$(시간 단위)는 경도 $λ$의 함수로 계산된다:
 
 $$
 Δt = round(λ / 7.5) × 0.5
 $$
+
 반올림 함수 $round(x)$ 는 수학적 반올림 규칙에 따라 가장 가까운 정수로 수행된다(반정수 값의 경우——사용되는 측지 좌표계에 따라 가장 가까운 짝수 또는 0에서 멀어지는 방향으로).
 
 ### 3.3. 동기화 요구사항(계량 보증)
@@ -489,9 +522,11 @@ $$
 $$
 Δ_NTP = T_NTP_Server − T_System
 $$
+
 NTP 서버를 사용할 수 있는 경우, GHHT 계산에는 보정된 척도를 사용해야 한다:
 
 $$
 T_UTC = T_System + Δ_NTP
 $$
+
 통신이 손실되면 장치는 자동으로 자율 모드로 전환하고 상태를 고정해야 한다.
