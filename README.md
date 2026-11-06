@@ -3,7 +3,7 @@
 ---
 
 
-## Language Selection / Выбор языка / 언어 선택 / 言語の選択 / 语言选择 / Sprachauswahl / Selección de idioma / Sélection de la langue
+## Language Selection / Выбор языка / 언어 선택 / 言語の選択 / 语言选择
 
 * [English](#english)
 * [Русский](#русский)
